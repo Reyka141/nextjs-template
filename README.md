@@ -1,4 +1,4 @@
-# MiniFhr Landing Page
+# Next App Page
 
 Лендинг-страница, разработанная с использованием Next.js, React и TailwindCSS.
 
