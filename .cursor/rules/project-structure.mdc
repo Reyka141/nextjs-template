@@ -1,0 +1,26 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Структура проекта
+
+Этот проект представляет собой лендинг-страницу, разработанную с использованием Next.js, React и TailwindCSS.
+
+## Основные директории
+
+- **src/app** - основные файлы приложения Next.js
+  - [page.tsx](mdc:src/app/page.tsx) - главная страница приложения
+  - [layout.tsx](mdc:src/app/layout.tsx) - корневой макет приложения
+  - [globals.css](mdc:src/app/globals.css) - глобальные стили
+
+- **src/components** - React компоненты, организованные по функциональным разделам
+  - Каждый компонент находится в своей директории с соответствующим именем
+
+## Технологии
+
+- Next.js 15.3.0
+- React 19
+- TailwindCSS 4
+- Animate.css
+- TypeScript

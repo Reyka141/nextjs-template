@@ -1,0 +1,24 @@
+stages:
+  - build
+
+variables:
+  IMAGE: ${CI_REGISTRY}/${CI_REGISTRY_IMAGE}
+  TAG: ${CI_COMMIT_SHORT_SHA}
+
+build-and-push:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+  script:
+    - |
+      echo "IMAGE_TAG is: $IMAGE:$TAG"
+      docker build -t "$IMAGE:$TAG" .
+      docker push "$IMAGE:$TAG"
+  after_script:
+    - docker logout "$CI_REGISTRY"
+  only:
+    - branches
+    - tags
